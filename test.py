@@ -9,6 +9,7 @@ serialPort = serial.Serial(
     parity=serial.PARITY_EVEN
 )
 
+
 def print_colored_text(text, color):
     colors = {
         'red': '\033[31m',
