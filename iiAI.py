@@ -10,6 +10,12 @@ import getpass
 import time
 from dotenv import load_dotenv
 load_dotenv()
+import logging
+logname = 'log'
+logging.basicConfig(filename=logname,
+                    filemode='a',
+                    format='%(message)s'
+                    level=logging.DEBUG)
 
 hostname = socket.gethostname()
 local_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -58,6 +64,7 @@ def handle_input(serialString):
         serialPort.write(output.encode('ISO-8859-1'))
         return True
     print(f"Received: {serialString}")
+    logging.info(f"Received: {serialString}")
     data = {
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": serialString}]
@@ -66,6 +73,7 @@ def handle_input(serialString):
     cont = response.json()
     formcont = cont["choices"][0]["message"]["content"]
     print(f"Answre from AI: "+formcont)
+    logging.info(f"Answre from AI: "+formcont)
     serialPort.write(formcont.encode('ascii', 'ignore'))
     return True
 
