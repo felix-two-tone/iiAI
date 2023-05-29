@@ -14,7 +14,7 @@ import logging
 logname = 'log'
 logging.basicConfig(filename=logname,
                     filemode='a',
-                    format='%(message)s'
+                    format='%(message)s',
                     level=logging.DEBUG)
 
 hostname = socket.gethostname()
