@@ -89,7 +89,7 @@ def print_startup_text(serialPort):
     serialPort.write(startup_text.encode('ISO-8859-1'))
 
 def authenticate(serialPort):
-    serialPort.write(b'\x1b[2J\n\rUsername: ')
+    serialPort.write(b'\x1b[2J\x07\n\rUsername: ')
     username = read_input(serialPort)
     serialPort.write(b'\n\rPassword: ')
     password = read_input(serialPort)
