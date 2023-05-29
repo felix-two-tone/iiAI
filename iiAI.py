@@ -24,7 +24,7 @@ headers = {
 }
 
 serialPort = serial.Serial(
-    port="COM4",
+    port=os.getenv('COMINFO'),
     baudrate=9600,
     bytesize=8,
     timeout=2,
