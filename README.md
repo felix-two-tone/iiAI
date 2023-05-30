@@ -38,9 +38,16 @@ COMINFO=your_com_info_here
 ```bash
 python3 openai_apple.py
 ```
-
-6. The terminal screen will prompt you to enter a username and password. Please note that the user running the Python code will be the host user for the machine and enter the password you set in step 3.
-7. After entering the correct credentials, the introduction message will be displayed, and the application will be ready to receive input. 
+6. Here you will need a terminal software application for Apple ][, Apple IIe, Apple IIc or Apple IIGS. I personally use [ANSITerm](https://www.whatisthe2gs.apple2.org.za/ansiterm-v2-1.html) on GS-OS and [AGATE](https://archive.org/details/009_Agate_Version_089_ProDOS_Version) on Apple II from a 5 inch floppy. Once you're in, depending on your software choose the setting to match the settings in the iiAI.py code:
+```bash
+baudrate=9600,
+bytesize=8,
+timeout=2,
+stopbits=serial.STOPBITS_ONE,
+parity=serial.PARITY_EVEN 
+```
+7. The terminal screen will prompt you to enter a username and password. Please note that the user running the Python code will be the host user for the machine and enter the password you set in step 3.
+8. After entering the correct credentials, the introduction message will be displayed, and the application will be ready to receive input. 
 
 
 
